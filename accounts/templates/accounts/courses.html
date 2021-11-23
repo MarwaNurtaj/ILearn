@@ -1,0 +1,60 @@
+
+{% extends 'accounts/main.html' %}
+
+
+	{% block content %}
+	<h1>Courses Page</h1>
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Courses</h5>
+				</div>
+				<div class="card card-body" >
+					<table class="table">
+						<tr>
+							<th>Courses</th>
+							<th>Category</th>
+							<th>Price</th>
+						</tr>
+						
+						{% for i in courses %}
+						<tr>
+							<td>{{i.name}}</td>
+							<td>{{i.catagory}}</td>
+							<td>{{i.price}}</td>
+							
+							<td>
+								{%if i.link == "web" %}
+								
+								
+						        <a class="nav-link" href="{% url 'webdesign'%}">Webdesign course details</span></a>
+								
+						        {% elif i.link == "eee" %} 
+						        <a class="nav-link" href="{% url 'electric'%}">Electronic Circuits course details</span></a>
+								
+						        {% elif i.link == "englishbasic" %}
+
+						        <a class="nav-link" href="{% url 'english'%}">English course details</span></a>
+
+						        {% else %}	
+
+								<a class="nav-link" href="{% url 'calculations'%}">Calculations course details</span></a>
+								
+						        {% endif %}
+						     </td>
+						</tr>
+
+
+						</tr>
+						{% endfor%}
+
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+	{% endblock %}

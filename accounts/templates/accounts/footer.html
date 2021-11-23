@@ -1,0 +1,111 @@
+{% load static %}
+
+
+<style>
+.float-container {
+    border: 1px
+    solid #212529;
+    background:  #ccfff3;
+    padding: 20px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    background:#ccfff3;
+    border: 2px solid #B0C4DE;
+}
+
+.float{
+    width: 100%;
+    float: left;
+    padding: 20px;
+    background: #20dbc2;
+    border: 2px solid #B0C4DE;
+}
+
+.logoback{
+	    background: #ccfff3;
+}
+.social-text {
+    padding: 0.7rem 0
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    height: 46px;
+    width: 46px;
+    border: 1px solid #333;
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:  #333;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.social-icon:hover {
+    color: #20dbc2;
+    border-color: #00bfa6;
+}
+
+</style>
+<div class="float">
+	<div class="logoback">
+				<H3>Teach the world online</H3>
+		<img src="{% static '/images/logo.png'%}" style="width: 8vw; min-width: 8px;"/>
+		<H5>Create an online video course, reach students across the globe.</H5>
+	</div>
+
+<div class="float-container">
+
+  <div class="float-child">
+        <h4>About</h4>
+        <p><a href="{% url 'aboutus'%}">About us</span></a></p>
+        <p><a href="{% url 'support'%}">We're providing best support</a></p>
+        <p><a href="{% url 'support'%}">Support</a></p>
+        <p><a href="#"> </a></p>
+        <p>            
+                    <br>                         
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+        </p>
+  </div>
+  
+  <div class="float-child">
+        <h4>Info</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i>  iLEARN  </p>
+        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
+        <p><i class="fa fa-fw fa-envelope"></i> eilearn@gmail.com</p>
+        <h3>Contact us anytime</h3>
+        <p class="social-text">Find us in social platforms</p>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/elearning4sale" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/ilearnSA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="http://www.ilearn.com/
+                        " class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCREcqFXXtrX7cwakAFHPz1w" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        
+                    </div>
+  </div>
+  
+</div>
+</div>

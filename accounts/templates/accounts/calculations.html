@@ -1,0 +1,29 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+	{% block content %}
+
+	<h1>Calculation Course Details with All information and matterials</h1>
+
+		<br>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/calculations.jpg'%}" />
+						<div class="ci-thumb set-bg" data-setbg="/images/calculations.jpg"></div>
+						<div class="ci-text">
+							<h5>Electronic Circuits</h5>
+							<p>Good Calculation related courses.</p>
+							<span>10 Courses</span>
+						</div>
+					</div>
+				</div>
+
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/KzfWUEJjG18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="row">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/NybHckSEQBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/cC0fZ_lkFpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/B1HEzNTGeZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			    </div>
+
+	{% endblock %}

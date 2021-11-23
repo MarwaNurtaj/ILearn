@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+.container_whole{
+  border-color: #ccc;
+  background-color: #ddd;
+  width: 100%;
+}
+.image {
+	width: 100%;
+	transition: 1.1s 0.4s ease-in-out;
+}
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+</style>
+</head>
+<body>
+  
+<div align="center">
+    <h2>ilearn Chat</h2>
+      <img src="{% static '/images/logo.png'%}" style="width: 8vw; min-width: 8px;"/>
+</div>
+
+
+  <!--img src="/images/message.svg" alt="" class="image" /-->
+<div class="container">
+ 
+    <style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #0a3c99;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #456bbd;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+    </style>
+    
+<form id="post-form" method="POST" action="checkview">
+        {% csrf_token %}
+        {% if request.user.is_active %}
+        <label>Room Name</label>
+        
+        <input type="text" name="room_name" id="room_name" width="100px" value={{Course.name}} >
+        <label>Username</label>
+        <input type="text" name="username" id="username" width="100px" value={{request.user}} />
+        <input type="submit" value="Enter Room">
+        {% else %}
+        <label>Room Name</label>
+        
+        <input type="text" name="room_name" id="room_name" width="100px" value="Request" >
+        <label>Username</label>
+        <input type="text" name="username" id="username" width="100px" value={{request.user}} />
+        <input type="submit" value="Enter Room">
+        {% endif %}
+    </form>
+</div>
+{% if request.user.is_staff%}
+<p>
+ <h4> NOTE: To talk with students you have to write the course code with all uppercase letter and your name.
+  like as if you want to talk with ENG101 course students, 
+  you have to write 'ENG101' as room name and your name as username
+  if anyone sends a message,you will get to see that, and reply to that message. </h4>
+</p>
+{% elif request.user.is_active %}
+<p>
+  <h4>NOTE: To talk with the instructor you have to write the course code with all uppercase letter and your name.
+  like as if you want to talk with ENG101 course instructor, 
+  you have to write 'ENG101' as room name and your name as username
+  when the instructor is free,he will reply your message. you can see that reply anytime.</h4>
+</p>
+{% else %}
+<p>
+  <h4>NOTE: To talk with the instructor you have to write the course code with all uppercase letter and your name.
+  like as if you want to talk with instructor, Send direct massage</h4>
+</p>
+
+{% endif %}
+
+
+</body>
+
+
+</html>

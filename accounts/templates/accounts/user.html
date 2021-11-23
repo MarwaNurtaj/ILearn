@@ -1,0 +1,180 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+{% load static %}
+{% include 'accounts/status.html' %}
+
+<h3>STUDENT Profile</h3>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Course</th>
+					<th>Note</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+					
+				</tr>
+
+				{% for order in order%}
+				<tr>
+					<td>{{order.Courses}}</td>
+					<td>{{order.note}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{order.status}}</td>
+					<td>
+						{%if order.status == "Deliverd" %}
+							{%if order.Courses.link  == "web" %}
+								
+								
+						        <a class="nav-link" href="{% url 'webdesign'%}">Webdesign course details</span></a>
+								
+						    {% elif order.Courses.link == "eee" %} 
+						        <a class="nav-link" href="{% url 'electric'%}">Electronic Circuits course details</span></a>
+								
+						    {% elif order.Courses.link == "englishbasic" %}
+
+						        <a class="nav-link" href="{% url 'english'%}">English course details</span></a>
+
+						    {% else %}	
+
+								<a class="nav-link" href="{% url 'calculations'%}">Calculations course details</span></a>
+								
+						    {% endif %}
+						{% endif %}
+
+						     </td>
+						</td>
+					
+				</tr>
+				{% endfor%}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+		<h1>Courses</h1>
+		<section class="categories-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Our Course Categories</h2>
+				<p>Whether you want to improve your skills, increase your chances of employment or further your professional qualifications, Online iLearn has a variety of distance learning courses to suit you.</p>
+			</div>
+			<div class="row">
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/web1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/web1.jpg"></div>
+						<div class="ci-text">
+							<h5>IT Development</h5>
+							<p>Good IT related courses.</p>
+							<span>10 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+							<img src="{% static '/images/crs1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/crs1.jpg"></div>
+						<div class="ci-text">
+							<h5>Web Design</h5>
+							<p>Be a web develover in several days.</p>
+							<span>20 Courses</span>
+						</div>
+					</div>
+				</div>
+	            <!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/ec1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/ec1.jpg"></div>
+						<div class="ci-text">
+							<h5>Electronic Circuits</h5>
+							<p>Learn all about electronic circuits.</p>
+							<span>15 Courses</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/eng2.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/eng2.jpg"></div>
+						<div class="ci-text">
+							<h5>English Basic Learning</h5>
+							<p>Learn fluent English in few days.</p>
+							<span>12 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/Sfe1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/Sfe1.jpg"></div>
+						<div class="ci-text">
+							<h5>Software Development</h5>
+							<p>Be a software developer in several days.</p>
+							<span>22 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/bcs1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/bcs1.jpg"></div>
+						<div class="ci-text">
+							<h5>Basic Computer Science</h5>
+							<p>Learn each & every detail about basic computer science.</p>
+							<span>22 Courses</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/py1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/py1.jpg"></div>
+						<div class="ci-text">
+							<h5>Python</h5>
+							<p>Be a better programmer by learning Python.</p>
+							<span>18 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/hde1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/hde1.jpg"></div>
+						<div class="ci-text">
+							<h5>Hardware Development</h5>
+							<p>Be a good software developer in several days.</p>
+							<span>24 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/mce1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/mce1.jpg"></div>
+						<div class="ci-text">
+							<h5>Basic Mechanical Engineeering</h5>
+							<p>Learn basic mechanical engineering in few days.</p>
+							<span>16 Courses</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+{% endblock content%}

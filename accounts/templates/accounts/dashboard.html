@@ -1,0 +1,223 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+	{% block content %}
+	<div class="container">
+		<img class="mySlides" src="{% static '/images/slide9.jpg'%}" style="width:100%">
+		<img class="mySlides" src="{% static '/images/slide6.jpg'%}" style="width:100%">
+		<img class="mySlides" src="{% static '/images/slide7.jpg'%}" style="width:100%">
+		<script type="text/javascript">
+			var slideIndex = 0;
+			carousel();
+
+			function carousel() {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  for (i = 0; i < x.length; i++) {
+			    x[i].style.display = "none";
+			  }
+			  slideIndex++;
+			  if (slideIndex > x.length) {slideIndex = 1}
+			  x[slideIndex-1].style.display = "block";
+			  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+		</script>
+	</div>
+
+		<h1>Home</h1>
+
+		{% include 'accounts/status.html' %}
+
+		<h1>Courses</h1>
+		<section class="categories-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Our Course Categories</h2>
+				<p>Whether you want to improve your skills, increase your chances of employment or further your professional qualifications, Online iLearn has a variety of distance learning courses to suit you.</p>
+			</div>
+			<div class="row">
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/web1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/web1.jpg"></div>
+						<div class="ci-text">
+							<h5>IT Development</h5>
+							<p>Good IT related courses.</p>
+							<span>10 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+							<img src="{% static '/images/crs1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/crs1.jpg"></div>
+						<div class="ci-text">
+							<h5>Web Design</h5>
+							<p>Be a web develover in several days.</p>
+							<span>20 Courses</span>
+						</div>
+					</div>
+				</div>
+	            <!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/ec1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/ec1.jpg"></div>
+						<div class="ci-text">
+							<h5>Electronic Circuits</h5>
+							<p>Learn all about electronic circuits.</p>
+							<span>15 Courses</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/eng2.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/eng2.jpg"></div>
+						<div class="ci-text">
+							<h5>English Basic Learning</h5>
+							<p>Learn fluent English in few days.</p>
+							<span>12 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/Sfe1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/Sfe1.jpg"></div>
+						<div class="ci-text">
+							<h5>Software Development</h5>
+							<p>Be a software developer in several days.</p>
+							<span>22 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/bcs1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/bcs1.jpg"></div>
+						<div class="ci-text">
+							<h5>Basic Computer Science</h5>
+							<p>Learn each & every detail about basic computer science.</p>
+							<span>22 Courses</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/py1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/py1.jpg"></div>
+						<div class="ci-text">
+							<h5>Python</h5>
+							<p>Be a better programmer by learning Python.</p>
+							<span>18 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/hde1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/hde1.jpg"></div>
+						<div class="ci-text">
+							<h5>Hardware Development</h5>
+							<p>Be a good software developer in several days.</p>
+							<span>24 Courses</span>
+						</div>
+					</div>
+				</div>
+				<!-- categorie -->
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<img src="{% static '/images/mce1.jpg'%}" style="width:100%">
+						<div class="ci-thumb set-bg" data-setbg="/images/mce1.jpg"></div>
+						<div class="ci-text">
+							<h5>Basic Mechanical Engineeering</h5>
+							<p>Learn basic mechanical engineering in few days.</p>
+							<span>16 Courses</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+				
+
+
+	<!-- categories section end -->
+<br>
+
+<div class="row">
+	<div class="col-md-5">
+		<h5>Students:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Students</a>
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Students</th>
+					<th>Phone</th>
+				</tr>
+
+				{% for students in students %}
+
+				<tr>
+					<td><a  class="btn btn-sm btn-info"  href="{% url 'students' students.id %}">view</a></td>
+					<td>{{students.name}}</td>
+					<td>{{students.phone}}</td>
+
+				</tr>	
+
+				{% endfor %}
+
+
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<h5>Enrolled Courses:</h5>
+		<hr>
+		<div class="card card-body">
+ 
+			<table class="table table-sm">
+				<tr>
+					<th>Courses</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+					<!--<th>Update</th>-->
+					<th>Remove</th>
+				</tr>
+					{% for order in order %}
+
+				<tr>
+					<td>{{order.Courses}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{order.status}}</td>
+					<!--<td><a  class="btn btn-sm btn-info"  href="{% url 'update_order' order.id %}">Update</a></td>-->
+					<td><a  class="btn btn-sm btn-danger"  href="{% url 'delete_order' order.id %}">Delete</a></td>
+					
+
+				</tr>	
+
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
+

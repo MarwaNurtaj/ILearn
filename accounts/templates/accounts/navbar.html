@@ -1,0 +1,155 @@
+{% load static %}
+
+<style >
+  .hello-msg{
+  font-family: cursive;
+  font-size: 18px;
+  color: #fff;
+  margin-right: 20px;
+}
+
+<!-- <br> -->
+
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #64418A;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <img src="{% static '/images/logo.png'%}" style="width: 8vw; min-width: 8px;"/>
+
+      <!--<a class="" href="#">iLearn</span></a>
+    -->
+        
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      {% if request.user.is_staff%}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home'%}">Home</span></a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'courses'%}">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'chathome' %}">Chat with Student</a>
+      </li>
+            <li class="nav-item">
+        <div class="dropdown">
+            <button class="dropbtn">Details
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'aboutus'%}">About us</span></a>
+              <a href="{% url 'support'%}">Support</a>
+            </div>
+          </li>
+      
+      
+      {% elif request.user.is_active %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'account' %}">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'chathome' %}">Chat with Instructor</a>
+      </li>
+            <li class="nav-item">
+        <div class="dropdown">
+            <button class="dropbtn">Details
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'aboutus'%}">About us</span></a>
+              <a href="{% url 'support'%}">Support</a>
+            </div>
+          </li>
+      
+      {% else %}
+
+      <li class="nav-item">
+        
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'chathome' %}">Request Message</a>
+      </li>
+       <li class="nav-item">
+        <div class="dropdown">
+            <button class="dropbtn">Details
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'aboutus'%}">About us</span></a>
+              <a href="{% url 'support'%}">Support</a>
+            </div>
+          </li>
+     
+      {% endif %}
+
+    </ul>
+
+  </div>
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  {% if request.user.is_active%}
+  <span><a class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+  {% endif %}
+
+</nav>
