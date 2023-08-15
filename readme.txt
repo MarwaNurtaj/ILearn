@@ -1,5 +1,5 @@
 Project Name : iLearn
-Group Members : Marwa Khanom Nurtaj (2019-1-60-255), Zannatul Mawa (2019-1-68-056), Rafsan Bari Shafin (2019-1-62-001)
+Group Members : Marwa Khanom Nurtaj, Zannatul Mawa, Rafsan Bari Shafin 
 
 
 Previously added features: 
